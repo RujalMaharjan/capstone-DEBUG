@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 def get_response(message):
-    url = 'http://localhost:5000/api/chat'  # Your backend URL
+    url = 'http://aiback-service:5000/api/chat'  # Updated backend URL
     data = {'message': message}
     try:
         response = requests.post(url, json=data)
