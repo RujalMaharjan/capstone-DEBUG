@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: aifront-service
+spec:
+  selector:
+    app: aifront
+  ports:
+    - protocol: TCP
+      port: 8501
+      targetPort: 8501
+  type: NodePort # or LoadBalancer if you're using a cloud provider that supports it

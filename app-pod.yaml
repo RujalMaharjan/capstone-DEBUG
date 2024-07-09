@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: aiback-pod
+  labels:
+    app: aiback
+spec:
+  containers:
+  - name: aiback-container
+    image: rujalmhn/aiback:1.0
+    ports:
+    - containerPort: 5000
+  restartPolicy: Always
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: aifront-pod
+  labels:
+    app: aifront
+spec:
+  containers:
+  - name: aifront-container
+    image: rujalmhn/aifront:2.0
+    ports:
+    - containerPort: 8501
+    env:
+    - name: BACKEND_URL
+      value: "http://aiback-pod:5000"
+  restartPolicy: Always

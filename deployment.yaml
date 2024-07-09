@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aiback-deployment
+  labels:
+    app: aiback
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aiback
+  template:
+    metadata:
+      labels:
+        app: aiback
+    spec:
+      containers:
+      - name: aiback-container
+        image: rujalmhn/aiback:1.0
+        ports:
+        - containerPort: 5000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aifront-deployment
+  labels:
+    app: aifront
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aifront
+  template:
+    metadata:
+      labels:
+        app: aifront
+    spec:
+      containers:
+      - name: aifront-container
+        image: rujalmhn/aifront:2.0
+        ports:
+        - containerPort: 8501
+        env:
+        - name: BACKEND_URL
+          value: "http://aiback-deployment:5000"
+      restartPolicy: Always
