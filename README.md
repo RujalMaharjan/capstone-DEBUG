@@ -23,7 +23,11 @@ eksctl get pods -o wide
 ```bash
 eksctl get services -o wide
 ```
-
+# to delete cluster
+```bash
+eksctl delete cluster -n capcluster
+```
+# run locally
 # run minikube
 ```bash
 minikube start
