@@ -27,8 +27,9 @@ eksctl get services -o wide
 ```bash
 eksctl delete cluster -n capcluster
 ```
-*** run locally ***
 
+*** run locally ***
+~~~~~~~~~~~~~~~~~~~
 # run minikube
 ```bash
 minikube start
