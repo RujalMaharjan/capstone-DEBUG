@@ -1,17 +1,35 @@
 ﻿# capstone-DEBUG
 
-# run minikube
-```bash
-minikube start
-```
 # run in awscli
 ```bash
 eksctl create cluster --name capcluster --region ca-central-1 --nodegroup-name standard-workers --node-type t2.micro --nodes-min 4 --nodes-max 10 --nodes 4
 aws eks --region ca-central-1 update-kubeconfig --name capcluster
-
 ```
 
-# to run services
+# to run services in aws cli
+```bash
+eksctl apply -f deployment.yaml 
+eksctl apply -f app-pod.yaml 
+eksctl apply -f aiback-service.yaml 
+eksctl apply -f service.yaml 
+```
+
+# to check status of pods in awscli
+```bash
+eksctl get pods -o wide
+```
+
+# to run application
+```bash
+eksctl get services -o wide
+```
+
+# run minikube
+```bash
+minikube start
+```
+
+# to run services locally
 ```bash
 kubectl apply -f deployment.yaml 
 kubectl apply -f app-pod.yaml 
