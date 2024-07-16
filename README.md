@@ -8,20 +8,20 @@ aws eks --region ca-central-1 update-kubeconfig --name capcluster
 
 # to run services in aws cli
 ```bash
-eksctl apply -f deployment.yaml 
-eksctl apply -f app-pod.yaml 
-eksctl apply -f aiback-service.yaml 
-eksctl apply -f service.yaml 
+kubectl apply -f deployment.yaml 
+kubectl apply -f app-pod.yaml 
+kubectl apply -f aiback-service.yaml 
+kubectl apply -f service.yaml 
 ```
 
 # to check status of pods in awscli
 ```bash
-eksctl get pods -o wide
+kubectl get pods -o wide
 ```
 
 # to run application
 ```bash
-eksctl get services -o wide
+kubectl get services -o wide
 ```
 # to delete cluster
 ```bash
