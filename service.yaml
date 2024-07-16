@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: aifront-service
 spec:
+  type: LoadBalancer
   selector:
     app: aifront
   ports:
     - protocol: TCP
       port: 8501
       targetPort: 8501
-    type: LoadBalancer
