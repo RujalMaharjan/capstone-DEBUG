@@ -29,7 +29,9 @@ eksctl delete cluster -n capcluster
 ```
 
 *** run locally ***
-~~~~~~~~~~~~~~~~~~~
+```
+****************
+```
 # run minikube
 ```bash
 minikube start
