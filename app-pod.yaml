@@ -21,7 +21,7 @@ metadata:
 spec:
   containers:
   - name: aifront-container
-    image: rujalmhn/ai-front:2.2
+    image: rujalmhn/ai-fornt:v2.2
     ports:
     - containerPort: 8501
     env:
