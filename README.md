@@ -10,7 +10,6 @@ aws eks --region ca-central-1 update-kubeconfig --name capcluster
 ```bash
 kubectl apply -f deployment.yaml 
 kubectl apply -f app-pod.yaml 
-kubectl apply -f aiback-service.yaml 
 kubectl apply -f service.yaml 
 ```
 
