@@ -23,7 +23,7 @@ spec:
   - name: aifront-container
     image: rujalmhn/ai-fornt:v2.2
     ports:
-    - containerPort: 8501
+    - containerPort: 80
     env:
     - name: BACKEND_URL
       value: "http://aiback-pod:5000"
